@@ -24,5 +24,10 @@ int main() {
     increment(compteur);
     increment(compteur);
     increment(compteur);
+
+    decrement(compteur);
+    decrement(compteur);
+    decrement(compteur);
+    decrement(compteur);
     return 0;
 }

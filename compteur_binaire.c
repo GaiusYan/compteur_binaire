@@ -39,5 +39,11 @@ void decrement(compteur_binaire comp) {
     if (comp -> valeur == 1) {
         comp -> valeur = 0;
     } else {
+        comp -> valeur = 1;
+        if (comp -> suivant == NULL) {
+            comp -> suivant = 0;
+        } else {
+            decrement(comp -> suivant);
+        }
     }
 }
