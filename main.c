@@ -25,9 +25,9 @@ int main() {
     increment(compteur);
     increment(compteur);
 
-    decrement(compteur);
-    decrement(compteur);
-    decrement(compteur);
-    decrement(compteur);
+    decrementer(compteur);
+    decrementer(compteur);
+    decrementer(compteur);
+    decrementer(compteur);
     return 0;
 }
