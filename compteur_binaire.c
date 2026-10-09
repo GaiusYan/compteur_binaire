@@ -7,7 +7,7 @@ struct list_chaine {
     list_chaine *suivant;
 };
 
-typedef struct list_chaine* compteur_binaire;
+typedef list_chaine* compteur_binaire;
 
 compteur_binaire init() {
     compteur_binaire comp = (compteur_binaire) malloc(sizeof(list_chaine));
@@ -16,24 +16,21 @@ compteur_binaire init() {
 }
 
 
-void print_compteur(compteur_binaire comp) {
-    if (comp -> suivant) {
-        print_compteur(comp -> suivant);
-    }
-}
+
 
 
 void increment(compteur_binaire comp) {
-    if (comp -> valeur == 0 ) {
+    if (comp -> valeur == 0) {
         comp -> valeur = 1;
-        comp->suivant = NULL;
     } else {
+        comp -> valeur = 0;
         if (comp -> suivant == NULL) {
-            comp -> suivant = malloc(sizeof(list_chaine));
-            comp -> suivant -> valeur  = 1;
-            comp -> suivant -> suivant  = NULL;
+            compteur_binaire nouveau_compteur = malloc(sizeof(list_chaine));
+            nouveau_compteur -> valeur = 1;
+            nouveau_compteur -> suivant = NULL;
+            comp -> suivant = nouveau_compteur;
         } else {
-            increment(comp);
+            increment(comp -> suivant);
         }
     }
 }
